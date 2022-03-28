@@ -1,0 +1,9 @@
+<app-selection-list
+   [items]="pandas$ | async"
+   (selectionChanged)="updateSelection($event)"
+>
+   <ng-template #itemTemplate let-item>
+      <app-panda [panda]="item"></app-panda>
+   </ng-template>
+</app-selection-list>
+<div *ngIf="selection.length">Selected ids: {{ selection }}</div>

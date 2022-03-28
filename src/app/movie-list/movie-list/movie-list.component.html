@@ -1,0 +1,9 @@
+<app-selection-list
+   [items]="movies$ | async"
+   (selectionChanged)="updateSelection($event)"
+>
+   <ng-template #itemTemplate let-item>
+      <app-movie [movie]="item"></app-movie>
+   </ng-template>
+</app-selection-list>
+<div *ngIf="selection.length">Selected ids: {{ selection }}</div>

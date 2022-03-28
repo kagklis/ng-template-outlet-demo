@@ -1,0 +1,12 @@
+<div class="container mt-4">
+   <div class="row">
+      <div class="col-sm-6 col-md-3 col-lg-2">
+         <select class="form-select mb-3" [(ngModel)]="selected">
+            <option value="Pandas" selected>Pandas</option>
+            <option value="Movies">Movies</option>
+         </select>
+      </div>
+   </div>
+   <app-panda-list *ngIf="selected === 'Pandas'"></app-panda-list>
+   <app-movie-list *ngIf="selected === 'Movies'"></app-movie-list>
+</div>
